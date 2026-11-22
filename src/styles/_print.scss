@@ -1,0 +1,162 @@
+.print-table-body {
+  display: none !important;
+}
+
+.print-only-table {
+  display: none !important;
+}
+
+@media print {
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 12pt;
+  }
+  body * {
+    visibility: hidden;
+  }
+  main, main * {
+    visibility: visible;
+  }
+  main {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .print-table-page,
+  .print-table-page * {
+    visibility: visible;
+  }
+  .print-table-page {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .print-table-page .print-hide,
+  .print-table-page .MuiTextField-root,
+  .print-table-page .MuiTablePagination-root,
+  .print-table-page .MuiDataGrid-toolbarContainer,
+  .print-table-page .MuiDataGrid-footerContainer,
+  .print-table-page .MuiFormControl-root,
+  .print-table-page .MuiCollapse-root,
+  .print-table-page .MuiTabs-root {
+    display: none !important;
+  }
+  .print-table-page .screen-table-body {
+    display: none !important;
+  }
+  .print-table-page .screen-results-card {
+    display: none !important;
+  }
+  .print-table-page .screen-positions-card {
+    display: none !important;
+  }
+  .print-disabled-page {
+    display: none !important;
+  }
+  .print-table-page .print-table-body {
+    display: table-row-group !important;
+  }
+  .print-table-page .print-only-table {
+    display: table !important;
+    width: 100% !important;
+    border-collapse: collapse !important;
+    table-layout: auto !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+  }
+  .print-table-page .print-only-table caption {
+    display: table-caption !important;
+    caption-side: top !important;
+    padding: 0 0 10px !important;
+    text-align: left !important;
+    font-size: 16pt !important;
+    font-weight: 700 !important;
+  }
+  .print-table-page .print-only-table thead {
+    display: table-header-group !important;
+  }
+  .print-table-page .print-only-table tbody {
+    display: table-row-group !important;
+  }
+  .print-table-page .print-only-table tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  .print-table-page .report-tab-panel {
+    display: block !important;
+  }
+  .print-table-page .print-only-table th,
+  .print-table-page .print-only-table td {
+    border: 1px solid #999 !important;
+    padding: 6px !important;
+    text-align: left !important;
+    vertical-align: top !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+  }
+  .print-table-page .print-only-table th {
+    font-weight: 700 !important;
+  }
+  .print-table-page .MuiTableContainer-root {
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  .print-table-page .MuiTable-root {
+    width: 100% !important;
+    min-width: 0 !important;
+    table-layout: auto !important;
+  }
+  .print-table-page .MuiTableCell-root {
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+  }
+  .print-table-page .MuiDataGrid-columnHeaders {
+    display: flex !important;
+  }
+  /* Hide all UI */
+  .MuiAppBar-root, .sidebar, nav, header, footer, button, dialog, .MuiDataGrid-toolbarContainer, .MuiDataGrid-pagination {
+    display: none !important;
+  }
+  /* DataGrid fixes */
+  .MuiDataGrid-root {
+    height: auto !important;
+    max-height: none !important;
+    font-size: 10pt;
+  }
+  .MuiDataGrid-virtualScroller {
+    height: auto !important;
+    overflow: visible !important;
+  }
+  .MuiDataGrid-row {
+    page-break-inside: avoid;
+    height: auto !important;
+  }
+  .MuiDataGrid-cell {
+    border-bottom: 1px solid #ddd !important;
+    padding: 8px 4px !important;
+    font-size: 10pt !important;
+  }
+  /* Page breaks */
+  h1, h2, h3, h5 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+  table {
+    page-break-inside: auto;
+  }
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  @page {
+    margin: 0.5in;
+    size: A4;
+  }
+}
